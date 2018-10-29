@@ -29,7 +29,7 @@ def move(my_history, their_history, my_score, their_score):
     if 'b' in their_history[-10:]: # If the other player has betrayed within last 10 rounds, 
         return 'b'               # Betray.
     else:
-        if random.random()<0.1: # 10% of the other rounds
+        if random.random()<0.10: # 10% of the other rounds
             return 'b'         # Betray
         else:
             return 'c'         # but 90% of the time collude

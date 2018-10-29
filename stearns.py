@@ -6,11 +6,17 @@
 #     move: A function that returns 'c' or 'b'
 ####
 
-team_name = 'The name the team gives to itself' # Only 10 chars displayed.
-strategy_name = 'The name the team gives to this strategy'
-strategy_description = 'How does this strategy decide?'
+team_name = 'BRONSON'
+strategy_name = 'The Destroyer'
+strategy_description = 'Destroy the enemy.'
     
 def move(my_history, their_history, my_score, their_score):
+    import random
+    number = random.randint (1,2)
+    if number == 2 or 'b' in their_history:
+        return 'c'
+    else:
+        return 'b'
     ''' Arguments accepted: my_history, their_history are strings.
     my_score, their_score are ints.
     
@@ -26,7 +32,6 @@ def move(my_history, their_history, my_score, their_score):
     # Analyze my_history and their_history and/or my_score and their_score.
     # Decide whether to return 'c' or 'b'.
     
-    return 'c'
 
     
 def test_move(my_history, their_history, my_score, their_score, result):
