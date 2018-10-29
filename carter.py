@@ -6,9 +6,9 @@
 #     move: A function that returns 'c' or 'b'
 ####
 
-team_name = 'The name the team gives to itself' # Only 10 chars displayed.
-strategy_name = 'The name the team gives to this strategy'
-strategy_description = 'How does this strategy decide?'
+team_name = 'idolgroup' # Only 10 chars displayed.
+strategy_name = 'The punishers will be punished'
+strategy_description = 'If your score is higher than mine I will check how often you betray. If you betray more than collude then I will betray you. If you collude more I will collude with you.'
     
 def move(my_history, their_history, my_score, their_score):
     ''' Arguments accepted: my_history, their_history are strings.
@@ -25,9 +25,23 @@ def move(my_history, their_history, my_score, their_score):
     
     # Analyze my_history and their_history and/or my_score and their_score.
     # Decide whether to return 'c' or 'b'.
-    
-    return 'c'
-
+    x=0
+    y=0
+    if their_score!=my_score:
+        if their_score>my_score:
+            for letter in their_history:
+                if letter=='b':
+                    x+=1
+                else:  
+                    y+=1
+            if x>y:
+                return 'b'
+            else:
+                return 'c'
+        else:
+            return 'b'
+    else:
+        return 'c'
     
 def test_move(my_history, their_history, my_score, their_score, result):
     '''calls move(my_history, their_history, my_score, their_score)
