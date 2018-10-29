@@ -8,7 +8,7 @@
 
 team_name = 'BRONSON'
 strategy_name = 'The Destroyer'
-strategy_description = 'Destroy the enemy.'
+strategy_description = 'Destroy the enemy with randomly choosing whether or not to betray or collude until they betray you, then betray forever.'
     
 def move(my_history, their_history, my_score, their_score):
     import random
