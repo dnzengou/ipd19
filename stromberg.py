@@ -13,13 +13,12 @@ strategy_description = 'Always collude.'
     
 def move(my_history, their_history, my_score, their_score):
 
-    if len(my_history)==0:
+    
+    
+    if random.randint(1,2)%2==0:
         return 'b'
     else:
-        if random.randint(1,2):
-            return 'b'
-        else:
-            return 'c'
+        return 'c'
 
     
 def test_move(my_history, their_history, my_score, their_score, result):
