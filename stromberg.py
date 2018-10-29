@@ -8,8 +8,8 @@ import random
 ####
 
 team_name = 'Da Boys'
-strategy_name = 'Collude Always'
-strategy_description = 'Always collude.'
+strategy_name = 'Random'
+strategy_description = 'Randomly collude or betray'
     
 def move(my_history, their_history, my_score, their_score):
 
