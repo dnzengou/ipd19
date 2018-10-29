@@ -8,7 +8,7 @@
 
 team_name = 'The name the team gives to itself' # Only 10 chars displayed.
 strategy_name = 'Tit for Tat'
-strategy_description = 'Collude then retaliate but then randomize.'
+strategy_description = 'Collude then retaliate, but then randomize.'
     
 def move(my_history, their_history, my_score, their_score):
     ''' Arguments accepted: my_history, their_history are strings.
@@ -17,10 +17,10 @@ def move(my_history, their_history, my_score, their_score):
     Make my move.
     Returns 'c' or 'b'. 
     '''
-    if len(my_history)==0: # It's the first round; collude.
+    if len(my_history)==0: 
         return 'c'
     elif my_history[-1]=='c' and their_history[-1]=='b':
-        return 'b' # Betray if they were severely punished last time,
+        return 'b'
     else:
         return 'b' or 'c'
     
