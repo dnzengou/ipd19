@@ -6,7 +6,7 @@
 #     move: A function that returns 'c' or 'b'
 ####
 
-team_name = 'E6'
+team_name = 'TeamDefault'
 strategy_name = 'Collude until betrayed'
 strategy_description = '''\
 Collude first round. Collude, unless betrayed; then always betray.'''
