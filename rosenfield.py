@@ -5,9 +5,11 @@
 #     strategy_description: a string
 #     move: A function that returns 'c' or 'b'
 ####
+import random
+
 
 team_name = 'Rosenfield' # Only 10 chars displayed.
-strategy_name = 'TfTSpitefulCheese'
+strategy_name = 'BetrayingCheese'
 strategy_description = 'It\'s a secret'
 
 def move(my_history, their_history, my_score, their_score):
@@ -21,54 +23,64 @@ def move(my_history, their_history, my_score, their_score):
     # my_history: a string with one letter (c or b) per round that has been played with this opponent.
     # their_history: a string of the same length as history, possibly empty. 
     # The first round between these two players is my_history[0] and their_history[0].
-    # The most recent round is my_history[-1] and their_history[-1].
+    # The most recent round is my_history[-1] and git their_history[-1].
     
     # Analyze my_history and their_history and/or my_score and their_score.
     # Decide whether to return 'c' or 'b'.
-
-    always_betray = 0
-    cheese_check = 0
-    
-    
-    
-    if len(their_history) == 10:
-        if their_history[0] == 'b' or 'B':
-            if their_history[1] == 'b' or 'B':
-                if their_history[2] == 'b' or 'B':
-                    if their_history[3] == 'c' or 'C':
-                        if their_history[4] == 'b' or 'B':
-                            if their_history[5] == 'b' or 'B':
-                                if their_history[6] == 'c' or 'C':
-                                    if their_history[7] == 'b' or 'B':
-                                        if their_history[8] == 'c' or 'C':
-                                            if their_history[9] == 'c' or 'C':
-                                                cheese_check = 1
-        else:
-            cheese_check = 0
-    
-    
-    
-    if len(their_history) > 2:
-        if(always_betray == 0):
-            if(their_history[len(their_history)-1] == 'b' or 'B'):
-                if(their_history[len(their_history)-2] == 'b' or 'B'):
-                    always_betray = 1
-    else:
-        always_betray = 0
-
-
-
-    if cheese_check == 1:
+#bbbcbbcbcc
+    if len(their_history) == 0:
         return 'b'
     else:
-        if len(their_history) == 0:
-            return 'c'
+        if len(their_history) == 1:
+            return 'b'
         else:
-            if(always_betray == 1):
+            if len(their_history) == 2:
                 return 'b'
             else:
-                return their_history[-1]
+                if len(their_history) == 3:
+                    return 'c'
+                else:
+                    if len(their_history) == 4:
+                        return 'b'
+                    else:
+                        if len(their_history) == 5:
+                            return 'b'
+                        else:
+                            if len(their_history) == 6:
+                                return 'c'
+                            else:
+                                if len(their_history) == 7:
+                                    return 'b'
+    
 
+#cccbccbcbb
+    if len(their_history) > 7:
+        if their_history[0] in ('c', 'C'):
+            if their_history[1] in ('c', 'C'):
+                if their_history[2] in ('c', 'C'):
+                    if their_history[3] in ('b', 'B'):
+                        if their_history[4] in ('c', 'C'):
+                            if their_history[5] in ('c', 'C'):
+                                if their_history[6] in ('b', 'B'):
+                                    if their_history[7] in ('c', 'C'):
+                                        return 'b'
+                                    else:
+                                        return 'b'
+                                else:
+                                    return 'b'
+                            else:
+                                return 'b'
+                        else:
+                            return 'b'
+                    else:
+                        return 'b'
+                else:
+                    return 'b'
+            else:
+                return 'b'
+        else:
+            return 'b'
+                                                
 def test_move(my_history, their_history, my_score, their_score, result):
     '''calls move(my_history, their_history, my_score, their_score)
     from this module. Prints error if return value != result.
