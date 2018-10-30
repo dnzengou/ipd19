@@ -11,40 +11,63 @@ strategy_name = 'Cheese'
 strategy_description = 'It\'s a secret'
 
 def move(my_history, their_history, my_score, their_score):
-#bbbcbbcbcc
+#cccbccbc
     if len(their_history) == 0:
-        return 'b'
+        return 'c'
     else:
         if len(their_history) == 1:
-            return 'b'
+            return 'c'
         else:
             if len(their_history) == 2:
-                return 'b'
+                return 'c'
             else:
                 if len(their_history) == 3:
-                    return 'c'
+                    return 'b'
                 else:
                     if len(their_history) == 4:
-                        return 'b'
+                        return 'c'
                     else:
                         if len(their_history) == 5:
-                            return 'b'
+                            return 'c'
                         else:
                             if len(their_history) == 6:
-                                return 'c'
+                                return 'b'
                             else:
                                 if len(their_history) == 7:
-                                    return 'b'
+                                    return 'c'
                                 else:
                                     if len(their_history) == 8:
-                                        return 'c'
+                                        return 'b'
                                     else:
                                         if len(their_history) == 9:
-                                            return 'c'
-                                        else:
-                                            return 'c'
-
-
+                                            return 'b'
+#bbbcbbcb
+    if len(their_history) > 7:
+        if their_history[0] in ('b', 'B'):
+            if their_history[1] in ('b', 'B'):
+                if their_history[2] in ('b', 'B'):
+                    if their_history[3] in ('c', 'C'):
+                        if their_history[4] in ('b', 'B'):
+                            if their_history[5] in ('b', 'B'):
+                                if their_history[6] in ('c', 'C'):
+                                    if their_history[7] in ('b', 'B'):
+                                        return 'c'
+                                    else:
+                                        return 'b'
+                                else:
+                                    return 'b'
+                            else:
+                                return 'b'
+                        else:
+                            return 'b'
+                    else:
+                        return 'b'
+                else:
+                    return 'b'
+            else:
+                return 'b'
+        else:
+            return 'b'
 
 
 def test_move(my_history, their_history, my_score, their_score, result):

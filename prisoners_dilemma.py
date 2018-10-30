@@ -77,8 +77,7 @@ collude = example0
 modules = [adamos, bennett, butrovich, cano, carpizo, carter, cheary, diep, espinoza,
            grupe, herron, ho, issa, kauffman, kelchner, mcknight, ordone, patch,
            patience, pelak, penington, robinson, robledo, rosenfield, sherman,
-           stearns, stromberg, taylor, whitacre, williams, zavodny, rosenfield1, rosenfield2,
-           rosenfield3, rosenfield4]
+           stearns, stromberg, taylor, whitacre, williams, zavodny, rosenfield1, rosenfield2, rosenfield3, rosenfield4]
 
 for module in modules:
     reload(module)
